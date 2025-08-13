@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Lime
+Comment=Lime TUI Desktop Environment
+Exec=/usr/local/bin/lime-session
+Type=Application
+DesktopNames=Lime

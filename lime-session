@@ -1,0 +1,18 @@
+#!/bin/bash
+# Launcher for Lime TUI DE
+
+LIME_PATH="/opt/lime/Lime.py"
+
+# If inside X (display manager), open in terminal emulator
+if [ -n "$DISPLAY" ]; then
+    if command -v x-terminal-emulator >/dev/null 2>&1; then
+        exec x-terminal-emulator -e python3 "$LIME_PATH"
+    elif command -v xterm >/dev/null 2>&1; then
+        exec xterm -e python3 "$LIME_PATH"
+    else
+        echo "No terminal emulator found."
+        exit 1
+    fi
+else
+    exec python3 "$LIME_PATH"
+fi
